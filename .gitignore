@@ -1,2 +1,8 @@
 venv
 .env
+uv.lock
+__pycache__
+*.toml
+functions/__pycache__
+.python-version
+
