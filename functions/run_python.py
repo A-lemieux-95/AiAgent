@@ -16,7 +16,7 @@ def run_python_file(working_directory, file_path):
         final_output = f"STDOUT: {result.stdout} \nSTDERR: {result.stderr}"
         if result.returncode != 0:
             return final_output + f"\nProcess exited with code {result.returncode} "
-        if result.stdout == "":
+        if result.stdout == "" and result.stderr == "":
             return f"No output produced"
         
         return final_output
@@ -39,7 +39,7 @@ schema_run_python_file = types.FunctionDeclaration(
                     type=types.Type.STRING,
                     description="Optional arguments to pass to the Python file.",
                 ),
-                description="Optional arguements to pass to the Python file.",
+                description="Optional arguments to pass to the Python file.",
             ),
         },
         required=["file_path"],
